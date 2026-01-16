@@ -1,0 +1,15 @@
+{
+  "name": "@mini/shared",
+  "private": true,
+  "version": "0.0.0",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "lint": "node -e \"process.exit(0)\"",
+    "format": "node -e \"process.exit(0)\"",
+    "test": "node -e \"process.exit(0)\""
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}
