@@ -6,16 +6,30 @@
     "build": "pnpm -r build",
     "lint": "eslint .",
     "format": "prettier -w .",
-    "test": "pnpm -r test"
+    "test": "pnpm -r test",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.3.1",
+    "@commitlint/config-conventional": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^8.53.1",
     "@typescript-eslint/parser": "^8.53.1",
     "eslint": "^9.39.2",
     "eslint-config-prettier": "^10.1.8",
     "eslint-plugin-import": "^2.32.0",
     "globals": "^17.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.7",
     "prettier": "^3.8.0",
     "typescript-eslint": "^8.53.1"
+  },
+  "lint-staged": {
+    "**/*.{ts,tsx,js,jsx,json,md,yml,yaml}": [
+      "prettier -w"
+    ],
+    "**/*.{ts,tsx}": [
+      "eslint --fix"
+    ]
   }
 }
