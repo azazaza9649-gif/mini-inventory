@@ -1,0 +1,14 @@
+services:
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: mini
+      POSTGRES_PASSWORD: mini
+      POSTGRES_DB: mini_inventory
+    ports:
+      - '5432:5432'
+    volumes:
+      - mini_inventory_pg:/var/lib/postgresql/data
+
+volumes:
+  mini_inventory_pg:
