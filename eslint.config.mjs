@@ -29,7 +29,7 @@ export default defineConfig([
       parserOptions: {
         sourceType: 'module',
         ecmaVersion: 'latest',
-        project: ['./apps/api/tsconfig.json', './packages/shared/tsconfig.json'],
+        project: ['./apps/api/tsconfig.eslint.json', './packages/shared/tsconfig.json'],
       },
       globals: {
         ...globals.node,
