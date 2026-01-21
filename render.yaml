@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: mini-inventory-api
+    env: node
+    plan: free
+    autoDeploy: true
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm -C apps/api build
+    startCommand: pnpm -C apps/api start:prod
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        sync: false
