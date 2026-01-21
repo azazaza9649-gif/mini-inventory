@@ -23,11 +23,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
+      - name: Enable Corepack + activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.4 --activate
+          pnpm --version
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
@@ -72,11 +73,12 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-          cache: pnpm
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9.15.4
+      - name: Enable Corepack + activate pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@9.15.4 --activate
+          pnpm --version
 
       - name: Install deps
         run: pnpm install --frozen-lockfile
