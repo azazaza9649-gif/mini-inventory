@@ -12,7 +12,8 @@
     "prepare": "husky",
     "db:up": "docker compose up -d",
     "db:down": "docker compose down -v",
-    "test:e2e": "pnpm db:up && pnpm -c apps/api prisma migrate deploy && pnpm -c apps/api test",
+    "test:e2e": "pnpm --dir apps/api prisma:migrate:deploy && pnpm --dir apps/api test:e2e",
+    "test:e2e:local": "pnpm db:up && pnpm --dir apps/api prisma:migrate:deploy && pnpm --dir apps/api test:e2e",
     "lint-staged": "lint-staged"
   },
   "devdependencies": {
