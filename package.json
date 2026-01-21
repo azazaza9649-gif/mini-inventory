@@ -8,6 +8,9 @@
     "format": "prettier -w .",
     "test": "pnpm -r test",
     "prepare": "husky",
+    "db:up": "docker compose up -d",
+    "db:down": "docker compose down -v",
+    "test:e2e": "pnpm db:up && pnpm -C apps/api prisma migrate deploy && pnpm -C apps/api test",
     "lint-staged": "lint-staged"
   },
   "devDependencies": {

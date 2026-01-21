@@ -48,3 +48,5 @@ docker-data/
 tmp/
 temp/
 .cache/
+apps/api/reports/
+.stryker-tmp/

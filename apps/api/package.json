@@ -11,10 +11,12 @@
     "test": "vitest run",
     "test:unit": "vitest run --coverage",
     "test:watch": "vitest",
+    "test:mutation": "stryker run",
     "prisma:generate": "prisma generate",
     "prisma:migrate": "prisma migrate dev",
     "prisma:studio": "prisma studio",
-    "postinstall": "prisma generate"
+    "postinstall": "prisma generate",
+    "pretest": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^6.19.2",
@@ -22,6 +24,8 @@
     "fastify": "^4.29.1"
   },
   "devDependencies": {
+    "@stryker-mutator/core": "^9.4.0",
+    "@stryker-mutator/vitest-runner": "^9.4.0",
     "@types/node": "^22.19.7",
     "@vitest/coverage-v8": "^4.0.17",
     "prisma": "^6.19.2",
